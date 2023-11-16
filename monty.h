@@ -116,7 +116,7 @@ __local int is_number(const char *n)
 	for (; *(n + i) != '\0'; i++)
 	{
 		if (isdigit(*(n + i)) == 0)
-		return (-1)
+		return (-1);
 	}
 	return (0);
 }

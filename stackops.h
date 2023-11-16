@@ -2,7 +2,7 @@
 #define _STACK_OPS_H
 
 #include "b_stackops.h"
-
+#include <ctype.h>
 /**
  * _mod - stack op mod
  * @stack: stack
