@@ -4,6 +4,7 @@
 #include "lists.h"
 #include "stackops.h"
 #include <stdio.h>
+#include <sys/types.h>
 /**
  * get - get functins
  * @opcode: intstruction opcode
@@ -50,7 +51,7 @@ __local int handler(int ac, char **av)
 {
 	stack_t *stack = NULL;
 	size_t len = 0;
-	size_t read;
+	ssize_t read;
 	uint l_num, check_line = 0;
 
 	fi(ac != 2) FAIL_ARGNUM;
