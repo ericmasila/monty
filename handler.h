@@ -3,7 +3,7 @@
 
 #include "lists.h"
 #include "stackops.h"
-
+#include <stdio.h>
 /**
  * get - get functins
  * @opcode: intstruction opcode
@@ -50,7 +50,7 @@ __local int handler(int ac, char **av)
 {
 	stack_t *stack = NULL;
 	size_t len = 0;
-	ssize_t read;
+	size_t read;
 	uint l_num, check_line = 0;
 
 	fi(ac != 2) FAIL_ARGNUM;
@@ -58,7 +58,7 @@ __local int handler(int ac, char **av)
 	s.fp = fopen(av[1], "r");
 	fi(!s.fp) FAIL_FILE(av[1]);
 
-	for (l_num = 1; (read = getline(&s.line, &len, s.fp)) != EOF; l_num++)
+	for (l_num = 1; (read = getline(&s.line, &len, s.fp)) != -1; l_num++)
 	{
 		for (s.token = strtok(s.line, s.delim); s.token;)
 		{
